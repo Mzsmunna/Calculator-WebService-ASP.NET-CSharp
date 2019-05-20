@@ -1,0 +1,10 @@
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\bin\Debug\DeskCalculator.exe.config
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\bin\Debug\DeskCalculator.exe
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\bin\Debug\DeskCalculator.pdb
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\obj\Debug\DeskCalculator.csprojAssemblyReference.cache
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\obj\Debug\DeskCalculator.calculatorForm.resources
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\obj\Debug\DeskCalculator.Properties.Resources.resources
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\obj\Debug\DeskCalculator.csproj.GenerateResource.cache
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\obj\Debug\DeskCalculator.csproj.CoreCompileInputs.cache
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\obj\Debug\DeskCalculator.exe
+C:\Users\mzsmu\source\repos\WSCalculator\DeskCalculator\obj\Debug\DeskCalculator.pdb

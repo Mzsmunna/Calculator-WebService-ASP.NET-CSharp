@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Initialize">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Calculation">
+        <s:complexType />
+      </s:element>
+      <s:element name="CalculationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ButtonPressed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="digit" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ButtonPressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ButtonPressedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignPressed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sign" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignPressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SignPressedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapIn">
+    <wsdl:part name="parameters" element="tns:Initialize" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculationSoapIn">
+    <wsdl:part name="parameters" element="tns:Calculation" />
+  </wsdl:message>
+  <wsdl:message name="CalculationSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ButtonPressedSoapIn">
+    <wsdl:part name="parameters" element="tns:ButtonPressed" />
+  </wsdl:message>
+  <wsdl:message name="ButtonPressedSoapOut">
+    <wsdl:part name="parameters" element="tns:ButtonPressedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignPressedSoapIn">
+    <wsdl:part name="parameters" element="tns:SignPressed" />
+  </wsdl:message>
+  <wsdl:message name="SignPressedSoapOut">
+    <wsdl:part name="parameters" element="tns:SignPressedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <wsdl:input message="tns:InitializeSoapIn" />
+      <wsdl:output message="tns:InitializeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Calculation">
+      <wsdl:input message="tns:CalculationSoapIn" />
+      <wsdl:output message="tns:CalculationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ButtonPressed">
+      <wsdl:input message="tns:ButtonPressedSoapIn" />
+      <wsdl:output message="tns:ButtonPressedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignPressed">
+      <wsdl:input message="tns:SignPressedSoapIn" />
+      <wsdl:output message="tns:SignPressedSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalServiceSoap" type="tns:CalServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <soap:operation soapAction="http://tempuri.org/Initialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Calculation">
+      <soap:operation soapAction="http://tempuri.org/Calculation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ButtonPressed">
+      <soap:operation soapAction="http://tempuri.org/ButtonPressed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignPressed">
+      <soap:operation soapAction="http://tempuri.org/SignPressed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalServiceSoap12" type="tns:CalServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <soap12:operation soapAction="http://tempuri.org/Initialize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Calculation">
+      <soap12:operation soapAction="http://tempuri.org/Calculation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ButtonPressed">
+      <soap12:operation soapAction="http://tempuri.org/ButtonPressed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignPressed">
+      <soap12:operation soapAction="http://tempuri.org/SignPressed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalService">
+    <wsdl:port name="CalServiceSoap" binding="tns:CalServiceSoap">
+      <soap:address location="http://localhost:43635/CalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalServiceSoap12" binding="tns:CalServiceSoap12">
+      <soap12:address location="http://localhost:43635/CalService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
